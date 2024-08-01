@@ -1,23 +1,14 @@
-"use client"
-import WebApp from "@twa-dev/sdk"
-import { useEffect, useState } from "react"
+
+import React from "react"
 import "./style.css";
 import Ton from "../assets/ton.png";
 import TonUp from '../assets/tonup.png';
 import { IoWallet } from "react-icons/io5";
 
 
-const home = () => {
+const home = (userData) => {
 
-  const [userData, setUserData] = useState(null)
 
-  useEffect(() => {
-    if ( WebApp.initDataUnsafe.user) {
-      setUserData( WebApp.initDataUnsafe.user)
-    }
-  }, [])
-
-  // WebApp
 
   return (
     <>
