@@ -14,7 +14,6 @@ const home = () => {
   useEffect(() => {
     if (WebApp.initDataUnsafe.user) {
       setUserData(WebApp.initDataUnsafe)
-      localStorage.setItem('user', JSON.stringify(WebApp.initDataUnsafe.user))
     }
 
   }, [])
