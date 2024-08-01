@@ -76,7 +76,7 @@ const home = () => {
         <>
           <h1 className="text-2xl font-bold mb-4">User Data</h1>
           <ul>
-            <li>ID: {localStorage.getItem('userid')}</li>
+            <li>ID: {localStorage.getItem('user')}</li>
             <li>First Name: {localStorage.getItem('first_name')}</li>
             {userData.last_name && <li>Last Name: {localStorage.getItem('last_name')}</li>}
             {userData.username && <li>Username: {localStorage.getItem('username')}</li>}
