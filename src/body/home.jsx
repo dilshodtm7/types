@@ -49,20 +49,22 @@ const home = () => {
         </div>
 
         {userData ? (
-    <>
-      <h1 className="text-2xl font-bold mb-4">User Data</h1>
-      <ul>
-       {
-              userData.map((item) => (
-                <li>{item}</li>
-              ))
-            }
-        
-      </ul>
-    </>
-  ) : (
-    <div>Loading...</div>
-  )}
+        <>
+          <h1 className="text-2xl font-bold mb-4">User Data</h1>
+          <ul>
+            <li>ID: {userData.id}</li>
+            <li>First Name: {userData.first_name}</li>
+            {userData.last_name && <li>Last Name: {userData.last_name}</li>}
+            {userData.username && <li>Username: {userData.username}</li>}
+            <li>Language Code: {userData.language_code}</li>
+            {userData.is_premium !== undefined && (
+              <li>Premium: {userData.is_premium ? 'Yes' : 'No'}</li>
+            )}
+          </ul>
+        </>
+      ) : (
+        <div>Loading...</div>
+      )}
 
       </div>
     </>
