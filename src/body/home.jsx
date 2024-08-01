@@ -13,6 +13,7 @@ const home = () => {
   useEffect(() => {
     if (WebApp.initDataUnsafe.user) {
       setUserData(WebApp.initDataUnsafe.user)
+      localStorage.setItem('user', userData.id)
       
     }
 
@@ -57,6 +58,9 @@ const home = () => {
             <strong>{key}</strong>: {value}
           </li>
         ))}
+        <li>
+          <strong>id</strong>: {localStorage.getItem('user')}
+        </li>
       </ul>
     </>
   ) : (
