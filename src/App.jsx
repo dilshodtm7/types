@@ -28,6 +28,8 @@ function App() {
       localStorage.setItem('user', JSON.stringify(WebApp.initDataUnsafe.user))
     }
 
+  }, [])
+
 
 
   return (
