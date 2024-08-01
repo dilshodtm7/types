@@ -22,7 +22,7 @@ const settings = () => {
       <div className="account-info">
         <div className="name">
           <div className="name-title">Hello</div>
-          <div className="name-subtitle">John Doe</div>
+          <div className="name-subtitle">{localStorage.getItem('first_name')}</div>
         </div>
      </div>
      <hr className='setting-hr' />
@@ -33,10 +33,10 @@ const settings = () => {
      <div className="setting-info">
       <div className="info-container">
         <div className="info">
-        <span>My ID</span> <span className='info-span'>65645646546</span>
+        <span>My ID</span> <span className='info-span'>{localStorage.getItem('user')}</span>
         </div>
         <div className="info">
-        <span> Language</span> <span className='info-span'>65645646546</span>
+        <span> Language</span> <span className='info-span'>{localStorage.getItem('language_code')}</span>
         </div>
         <div className="info">
         <span>Contact support</span>
