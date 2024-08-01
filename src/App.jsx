@@ -1,6 +1,6 @@
-
-
-import React from 'react';
+"use client"
+import WebApp from "@twa-dev/sdk"
+import React, { useEffect, useState } from "react"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Body from './body/home.jsx';
 import Footer from './footer/footer.jsx';
@@ -20,6 +20,13 @@ import './App.css';
 
 
 function App() {
+  const [userData, setUserData] = useState(null)
+
+  useEffect(() => {
+    if (WebApp.initDataUnsafe.user) {
+      setUserData(WebApp.initDataUnsafe)
+      localStorage.setItem('user', JSON.stringify(WebApp.initDataUnsafe.user))
+    }
 
 
 
