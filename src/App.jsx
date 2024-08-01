@@ -35,7 +35,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Body />} />
+        <Route path="/" element={<Body userData={userData} />} />
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/setting" element={<Setting />} />
         <Route path="/task" element={<Task />} />
