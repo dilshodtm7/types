@@ -13,7 +13,7 @@ const home = () => {
 
   useEffect(() => {
     if (WebApp.initDataUnsafe.user) {
-      setUserData(WebApp.initDataUnsafe)
+      setUserData(WebApp.initDataUnsafe.user)
     }
 
   }, [])
