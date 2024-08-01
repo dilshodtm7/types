@@ -17,6 +17,30 @@ const home = () => {
     }
 
   }, [])
+  if(userData){
+    localStorage.setItem('user', userData.id)
+    if(userData.username){
+    localStorage.setItem('username', userData.username)
+    }else{
+      localStorage.removeItem('username')
+    }
+    if(userData.first_name){
+      localStorage.setItem('first_name', userData.first_name)
+    }else{
+      localStorage.removeItem('first_name')
+    }
+    if(userData.last_name){
+      localStorage.setItem('last_name', userData.last_name)
+    }else{
+      localStorage.removeItem('last_name')
+    }
+    if(userData.language_code){
+      localStorage.setItem('language_code', userData.language_code)
+    }else{
+      localStorage.removeItem('language_code')
+    }
+
+  }
 
   return (
     <>
@@ -52,13 +76,13 @@ const home = () => {
         <>
           <h1 className="text-2xl font-bold mb-4">User Data</h1>
           <ul>
-            <li>ID: {userData.id}</li>
-            <li>First Name: {userData.first_name}</li>
-            {userData.last_name && <li>Last Name: {userData.last_name}</li>}
-            {userData.username && <li>Username: {userData.username}</li>}
-            <li>Language Code: {userData.language_code}</li>
+            <li>ID: {localStorage.getItem('userid')}</li>
+            <li>First Name: {localStorage.getItem('first_name')}</li>
+            {userData.last_name && <li>Last Name: {localStorage.getItem('last_name')}</li>}
+            {userData.username && <li>Username: {localStorage.getItem('username')}</li>}
+            <li>Language Code: {localStorage.getItem('language_code')}</li>
             {userData.is_premium !== undefined && (
-              <li>Premium: {userData.is_premium ? 'Yes' : 'No'}</li>
+              <li>Premium: {localStorage.getItem('is_premium')?'Yes':'No'}</li>
             )}
           </ul>
         </>
