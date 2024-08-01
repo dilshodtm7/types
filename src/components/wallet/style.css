@@ -1,0 +1,102 @@
+
+.wallet-boost{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn-boost{
+    margin-top: 15px;
+    width: 70%;
+    height: 40px;
+    background-color: #0098E9;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    font-size: 26px;
+}
+.transaction{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.transaction-text{
+    color: white;
+    font-size: 22px;
+    font-family:monospace;
+    font-weight: bold;
+
+}
+
+.history-container{
+    margin-top: 30px !important;
+    display: flex;
+    color: white;
+    width: 100%;
+    height: 100%;
+    background-color:#1E2C3A ;
+    border-radius: 20px; 
+}
+.icon-wallet{
+font-size: 32px;
+padding: 5px;
+
+
+}
+.container-image{
+    background-color: #008AFF;
+    border-radius: 15px;
+    margin: 5px;
+}
+.balance-task{
+    margin-top: 10px !important;
+    display: flex;
+    flex-direction: column;
+}
+.pilus-task{
+    margin-top: 10px !important;
+    color: greenyellow;
+}
+
+.history-main-container{
+    height: calc(100vh - 90px);
+    background-color: #fff;
+}
+
+.btn-connect{
+    margin-top: 15px;
+    width: 90%;
+    height: 40px;
+    background-color: #0098E9;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.wallet-connects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.connect-text{
+    color: white;
+    font-size: 22px;
+    font-family:monospace;
+    font-weight: bold;
+
+}
+
+
+
+
+
+
+

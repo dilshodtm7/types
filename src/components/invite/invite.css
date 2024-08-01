@@ -1,0 +1,133 @@
+.invite-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.invite {
+  margin-top: 20px;
+}
+
+.invite-text {
+  color: white;
+  font-size: 22px;
+  text-align: center;
+}
+
+.invite-text-span {
+  color: #008aff;
+  font-size: 14px;
+}
+
+.invite-btn {
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  background-color:#1E2C3A ;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+.copy-btn {
+  margin-top: 10px;
+  width: 20%;
+  height: 40px;
+  background-color:#1E2C3A ;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.invite-link-title {
+  color: white;
+  font-size: 20px;
+}
+.invite-link-input {
+  margin-top: 10px;
+  width: 90%;
+  height: 40px;
+  background-color:#1E2C3A ;
+  color: #fff;
+  border-radius: 15px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 10px;
+  margin-right: 10px;
+}
+.copy-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  color: white;
+}
+.copy-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+  color: #fff;
+}
+.copy-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.invite-hr {
+  margin-top: 10px;
+  width: 90%;
+  border: 1px solid #1e2c3a;
+}
+
+.friends-list {
+  margin-top: 10px;
+  width: 90%;
+  height: 100%;
+  border-radius: 15px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 auto;
+  color: #fff;
+}
+.friends-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 20px;
+}
+.referal-info {
+  display: flex;
+}
+
+.referal-icon {
+  font-size: 30px !important;
+}
+
+.referal-balance-img {
+  width: 20px;
+}
+
+.referal-balance {
+  margin-left: 10px;
+  color: rgb(10, 228, 21);
+  font-size: 20px;
+}
+
+.friends-list-container {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 100px;
+  border-radius: 20px;
+  border: 1px solid #1e2c3a;
+}
