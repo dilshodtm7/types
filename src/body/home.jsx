@@ -52,11 +52,11 @@ const home = () => {
     <>
       <h1 className="text-2xl font-bold mb-4">User Data</h1>
       <ul>
-        {Object.entries(userData).map(([key, value]) => (
-          <li key={key}>
-            <strong>{key}</strong>: {value}
-          </li>
-        ))}
+       {
+              userData.map((item) => (
+                <li>{item}</li>
+              ))
+            }
         
       </ul>
     </>
