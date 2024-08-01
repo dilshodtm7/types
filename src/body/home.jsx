@@ -59,7 +59,6 @@ const home = () => {
             <strong>{key}</strong>: {value}
           </li>
         ))}
-        {userId}
       </ul>
     </>
   ) : (
