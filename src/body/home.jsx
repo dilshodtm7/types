@@ -12,8 +12,8 @@ const home = () => {
   const [userData, setUserData] = useState(null)
 
   useEffect(() => {
-    if (DemoApp.initDataUnsafe.user) {
-      setUserData(DemoApp.initDataUnsafe.user)
+    if ( WebApp.initDataUnsafe.user) {
+      setUserData( WebApp.initDataUnsafe.user)
     }
   }, [])
 
