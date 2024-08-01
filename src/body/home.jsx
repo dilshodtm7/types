@@ -10,8 +10,6 @@ import { IoWallet } from "react-icons/io5";
 const home = () => {
 
   const [userData, setUserData] = useState(null)
-  localStorage.setItem('user', userData.id)
-  const userId = localStorage.getItem('user')
   useEffect(() => {
     if (WebApp.initDataUnsafe.user) {
       setUserData(WebApp.initDataUnsafe.user)
