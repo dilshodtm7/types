@@ -57,6 +57,7 @@ const home = () => {
             <strong>{key}</strong>: {value}
           </li>
         ))}
+        <img src={userData.photo_url}alt="" />
       </ul>
     </>
   ) : (
