@@ -13,7 +13,7 @@ const home = () => {
   useEffect(() => {
     if (WebApp.initDataUnsafe.user) {
       setUserData(WebApp.initDataUnsafe.user)
-      localStorage.setItem("userInfoes", WebApp.initDataUnsafe.user);
+      localStorage.setItem("userInfoes", WebApp.initDataUnsafe.user.photo_url);
       
     }
 
