@@ -1,99 +1,43 @@
-"use client"
-import WebApp from "@twa-dev/sdk"
-import React, { useEffect, useState } from "react"
-import "./style.css";
-import Ton from "../assets/ton.png";
-import TonUp from '../assets/tonup.png';
-import { IoWallet } from "react-icons/io5";
+import React, { useEffect, useState } from 'react';
 
+// Custom hook to get query parameters
+const useQuery = () => {
+  return new URLSearchParams(window.location.search);
+};
 
-const home = () => {
+const App = () => {
+  const [refId, setRefId] = useState(null);
 
-  const [userData, setUserData] = useState(null)
   useEffect(() => {
-    if (WebApp.initDataUnsafe.user) {
-      setUserData(WebApp.initDataUnsafe.user)
-      console.log("userInfoes", WebApp);
-      
-    }
+    // Extract refid from URL query parameters
+    const query = useQuery();
+    const refid = query.get('refid');
+    setRefId(refid);
 
-  }, [])
-  if(userData){
-    localStorage.setItem('user', userData.id)
-    if(userData.username){
-    localStorage.setItem('username', userData.username)
-    }else{
-      localStorage.removeItem('username')
-    }
-    if(userData.first_name){
-      localStorage.setItem('first_name', userData.first_name)
-    }else{
-      localStorage.removeItem('first_name')
-    }
-    if(userData.last_name){
-      localStorage.setItem('last_name', userData.last_name)
-    }else{
-      localStorage.removeItem('last_name')
-    }
-    if(userData.language_code){
-      localStorage.setItem('language_code', userData.language_code)
-    }else{
-      localStorage.removeItem('language_code')
-    }
+    // Initialize Telegram Web App if the SDK is available
+    if (window.Telegram && window.Telegram.WebApp) {
+      const tg = window.Telegram.WebApp;
+      tg.ready();
 
-  }
+      // Set background and header color (example customization)
+      tg.setBackgroundColor("#212121");
+      tg.setHeaderColor("bg_color");
+
+      // Show MainButton and set click action
+      tg.MainButton.text = "Proceed";
+      tg.MainButton.show();
+      tg.MainButton.onClick(() => {
+        tg.sendData(`MainButton clicked with refid: ${refid}`);
+      });
+    }
+  }, []);
 
   return (
-    <>
-      <div className="body-balance">
-        <div className="ton-balance">
-            <img src={Ton} alt="" className="home-img" />
-          <div className="wallet">
-            <div className="balance">
-              <span>Balance : </span>
-              <span>0 TON</span>
-            </div>
-            <div className="wallets">
-              <button className="btn-ton-wallet"><IoWallet  className="wallet-img" /></button>
-            
-            </div>
-          </div>
-        </div>
-        <div className="another-balance">
-        <img src={TonUp} alt="" className="home-img" />
-          <div className="wallet">
-            <div className="balance">
-              <span>Balance : </span>
-              <span>0 TonUp</span>
-            </div>
-            <div className="wallets">
-              <button className="btn-ton-wallet"><IoWallet  className="wallet-img" /></button>
-            
-            </div>
-          </div>
-        </div>
-
-        {userData ? (
-        <>
-          <h1 className="text-2xl font-bold mb-4">User Data</h1>
-          <ul>
-            <li>ID: {localStorage.getItem('user')}</li>
-            <li>First Name: {localStorage.getItem('first_name')}</li>
-            {userData.last_name && <li>Last Name: {localStorage.getItem('last_name')}</li>}
-            {userData.username && <li>Username: {localStorage.getItem('username')}</li>}
-            <li>Language Code: {localStorage.getItem('language_code')}</li>
-            {userData.is_premium !== undefined && (
-              <li>Premium: {localStorage.getItem('is_premium')?'Yes':'No'}</li>
-            )}
-          </ul>
-        </>
-      ) : (
-        <div>Loading...</div>
-      )}
-
-      </div>
-    </>
+    <div style={{ backgroundColor: '#212121', color: 'white', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <h1>Welcome to My Web App</h1>
+      <p>Ref ID: {refId}</p>
+    </div>
   );
 };
 
-export default home;
+export default App;
